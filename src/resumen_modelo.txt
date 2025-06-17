@@ -1,0 +1,30 @@
+
+📌 **Resumen del Proyecto: Modelo de Regresión Lineal Regularizada**
+✔️ **Objetivo:** Analizar la relación entre datos demográficos y recursos de salud para predecir la prevalencia de enfermedades cardíacas.
+✔️ **Preprocesamiento:** Eliminación de valores constantes, duplicados y variables altamente correlacionadas.
+✔️ **Selección de Variables:** Se eligieron las 20 variables más influyentes mediante `SelectKBest`.
+✔️ **Escalado de Datos:** Se aplicó `StandardScaler` para normalizar los valores.
+
+📊 **Evaluación del Modelo Ridge:**
+✔️ **R² = 0.9878**, lo que indica un ajuste casi perfecto.
+✔️ **MAE = 0.0666**, error promedio bajo.
+✔️ **MSE = 0.0393**, error cuadrático bajo.
+✔️ **Variables más influyentes:** `Heart disease_Upper 95% CI`, `Heart disease_Lower 95% CI`, `diabetes_prevalence`, `COPD_prevalence`, `CKD_prevalence`.
+
+📊 **Evaluación del Modelo Lasso:**
+✔️ **R² ajustado según el valor de `alpha`**.
+✔️ **Menos variables con coeficientes distintos a cero**, lo que permite una selección automática de características.
+✔️ **Comparación del impacto de `alpha` en la regularización** para evitar sobreajuste.
+
+📘 **Comparación Ridge vs. Lasso:**
+✔️ Ridge **mantiene todos los coeficientes**, reduciendo su magnitud para evitar sobreajuste.
+✔️ Lasso **puede forzar coeficientes a cero**, lo que ayuda en la selección de características y simplificación del modelo.
+✔️ **Se probó la variación de `alpha` en Lasso y Ridge**, observando cómo afecta el ajuste del modelo.
+
+💾 **Exportación:**  
+✔️ Se guardaron el modelo Ridge (`modelo_ridge.pkl`) y el modelo Lasso (`modelo_lasso.pkl`) para futuras predicciones.  
+✔️ El escalador (`escalador.pkl`) se almacenó para transformar nuevos datos correctamente.  
+
+💡 **Conclusión:**  
+El uso de regresión regularizada (Ridge y Lasso) permite analizar la relación entre variables demográficas y de salud, mejorando la estabilidad del modelo y la selección de características clave.  
+
